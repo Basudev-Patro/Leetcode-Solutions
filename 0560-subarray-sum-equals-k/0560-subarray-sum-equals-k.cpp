@@ -14,6 +14,5 @@ public:
             mpp[prefix_sum] += 1;
         }
         return count;
-        
     }
 };
