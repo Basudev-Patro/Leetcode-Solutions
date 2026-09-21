@@ -30,6 +30,6 @@ public:
                 j = mid;
             }
         }
-        return i;
+        return j;
     }
 };
