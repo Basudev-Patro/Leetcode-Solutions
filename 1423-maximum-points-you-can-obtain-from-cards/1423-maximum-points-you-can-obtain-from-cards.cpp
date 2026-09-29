@@ -5,19 +5,19 @@ public:
             return accumulate(cardPoints.begin(),cardPoints.end(),0);
         }
         long long sum = 0;
-        long long max_sc = 0;
-        int left = 0;
+        long long max_sum = 0;
 
-        for(int i = 0; i < k; i++){
+        for(int i = 0;i < k; i++){
             sum += cardPoints[i];
         }
-        max_sc = sum;
+        max_sum = sum;
         int right = cardPoints.size() - 1;
+
         for(int i = k - 1; i >= 0; i--){
-            sum = sum - cardPoints[i] + cardPoints[right];
-            right--;
-            max_sc = max(max_sc,sum);
+            sum = sum + cardPoints[right] - cardPoints[i];
+            max_sum = max(max_sum , sum);
+            right--; 
         }
-        return max_sc;
+        return max_sum;
     }
 };
